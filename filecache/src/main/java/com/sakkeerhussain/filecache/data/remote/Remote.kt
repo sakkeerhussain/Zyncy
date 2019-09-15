@@ -1,4 +1,4 @@
-package com.sakkeerhussain.library.data.remote
+package com.sakkeerhussain.filecache.data.remote
 
 /*
  * Created by Sakkeer Hussain on 2019-09-15.
