@@ -10,12 +10,12 @@ import okhttp3.Call
 class ImageRequest(override var url: String) : Request {
     override var headers: Map<String, String> = emptyMap()
     override var listeners: Int = 0
-    override var state: LiveData<Request.State> = MutableLiveData()
+    override var state: MutableLiveData<Request.State> = MutableLiveData()
     override var progress: LiveData<Int>? = null
     override var httpsRequest: Call? = null
 
     override fun updateState(state: Request.State) {
-        (this.state as MutableLiveData<Request.State>).value = state
+        this.state.value = state
     }
 
 }

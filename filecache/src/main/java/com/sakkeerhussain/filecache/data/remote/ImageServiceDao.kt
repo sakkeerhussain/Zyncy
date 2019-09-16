@@ -3,5 +3,7 @@ package com.sakkeerhussain.filecache.data.remote
 /*
  * Created by Sakkeer Hussain on 2019-09-15.
  */
-interface ImageDao {
+interface ImageServiceDao {
+
+    fun getImage(url: String)
 }
