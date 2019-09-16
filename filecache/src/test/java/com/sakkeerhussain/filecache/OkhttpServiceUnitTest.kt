@@ -1,8 +1,6 @@
 package com.sakkeerhussain.filecache;
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.sakkeerhussain.filecache.data.remote.okhhtp.ImageRequest
-import com.sakkeerhussain.filecache.data.remote.okhhtp.ImageRequestFactory
 import com.sakkeerhussain.filecache.data.remote.okhhtp.OkhttpServiceImpl
 import okhttp3.Call
 import okhttp3.Callback

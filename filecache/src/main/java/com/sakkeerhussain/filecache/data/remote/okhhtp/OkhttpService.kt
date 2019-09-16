@@ -1,5 +1,6 @@
 package com.sakkeerhussain.filecache.data.remote.okhhtp
 
+import com.sakkeerhussain.filecache.ui.request.Request
 import okhttp3.Callback
 
 /*

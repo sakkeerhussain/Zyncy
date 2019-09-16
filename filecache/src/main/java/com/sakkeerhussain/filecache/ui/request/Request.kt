@@ -1,4 +1,4 @@
-package com.sakkeerhussain.filecache.data.remote.okhhtp
+package com.sakkeerhussain.filecache.ui.request
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +10,7 @@ import okhttp3.Call
 interface Request {
 
     var url: String
-    var headers: Map<String, String>
+    var headers: HashMap<String, String>
     var listeners: Int
     var state: MutableLiveData<State>
     var progress: LiveData<Int>?

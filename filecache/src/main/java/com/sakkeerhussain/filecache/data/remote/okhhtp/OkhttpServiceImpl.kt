@@ -1,11 +1,8 @@
 package com.sakkeerhussain.filecache.data.remote.okhhtp
 
-import android.graphics.BitmapFactory
-import okhttp3.Call
+import com.sakkeerhussain.filecache.ui.request.Request
 import okhttp3.Callback
 import okhttp3.OkHttpClient
-import okhttp3.Response
-import java.io.IOException
 
 
 /*

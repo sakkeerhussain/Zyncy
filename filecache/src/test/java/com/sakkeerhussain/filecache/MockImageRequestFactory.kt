@@ -1,10 +1,7 @@
 package com.sakkeerhussain.filecache
 
-import androidx.lifecycle.MutableLiveData
-import com.sakkeerhussain.filecache.data.remote.okhhtp.ImageRequest
-import com.sakkeerhussain.filecache.data.remote.okhhtp.ImageRequestFactory
-import com.sakkeerhussain.filecache.data.remote.okhhtp.Request
-import org.mockito.Mockito
+import com.sakkeerhussain.filecache.ui.request.ImageRequest
+import com.sakkeerhussain.filecache.ui.request.ImageRequestFactory
 
 class MockImageRequestFactory {
 
