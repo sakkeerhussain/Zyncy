@@ -11,14 +11,13 @@ import java.io.IOException
  * Created by Sakkeer Hussain on 2019-09-15.
  */
 
-class OkhttpServiceImpl: OkhttpService {
+class OkhttpServiceImpl(val client: OkHttpClient): OkhttpService {
 
     override fun get(request: Request) {
 
         // Status update
         request.updateState(Request.State.IN_PROGRESS)
 
-        val client = OkHttpClient()
         val requestBuilder = okhttp3.Request.Builder().url(request.url)
         request.headers.keys.forEach { key ->
             requestBuilder.addHeader(key, request.headers.getValue(key))

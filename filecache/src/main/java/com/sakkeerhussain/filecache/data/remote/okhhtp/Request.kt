@@ -8,12 +8,12 @@ import okhttp3.Call
  */
 interface Request {
 
-    val url: String
-    val headers: Map<String, String>
+    var url: String
+    var headers: Map<String, String>
     var listeners: Int
     var state: LiveData<State>
-    var progress: LiveData<Int>
-    var httpsRequest: Call
+    var progress: LiveData<Int>?
+    var httpsRequest: Call?
 
     fun updateState(state: State)
 

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/RemoteFileSyncCacheAndroid.iml" filepath="$PROJECT_DIR$/RemoteFileSyncCacheAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/RemoteFileSyncCacheAndroid-app.iml" filepath="$PROJECT_DIR$/app/RemoteFileSyncCacheAndroid-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/filecache/RemoteFileSyncCacheAndroid-filecache.iml" filepath="$PROJECT_DIR$/filecache/RemoteFileSyncCacheAndroid-filecache.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/file_cache.iml" filepath="$PROJECT_DIR$/file_cache.iml" />
       <module fileurl="file://$PROJECT_DIR$/filecache/filecache.iml" filepath="$PROJECT_DIR$/filecache/filecache.iml" />
