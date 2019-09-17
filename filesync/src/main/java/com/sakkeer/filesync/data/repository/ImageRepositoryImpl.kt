@@ -16,9 +16,10 @@ class ImageRepositoryImpl(
     private val mRequestQueue: RequestQueue
 ): ImageRepository {
 
-    override fun getImage(request: Request, target: BaseTarget) {
+    override fun getImage(request: Request, target: BaseTarget): Request {
         if (isInCache()) {  // a cache miss
             // Fetch from cache
+            return request
         } else {
 
             if (target !is ImageTarget) {
@@ -31,11 +32,16 @@ class ImageRepositoryImpl(
             val queuedRequest = mRequestQueue.enqueue(request, target)
             val callback = ImageResponseCallbackImpl(queuedRequest, this)
             mImageServiceDao.getImage(queuedRequest, callback)
+            return queuedRequest
         }
     }
 
     override fun dequeRequest(request: Request) {
         mRequestQueue.deque(request)
+    }
+
+    override fun cancelRequest(request: Request) {
+        // TODO =
     }
 
     private fun isInCache(): Boolean {

@@ -5,7 +5,10 @@ import com.sakkeer.filesync.client.BaseTarget
 import com.sakkeer.filesync.client.ImageViewTarget
 import com.sakkeer.filesync.data.repository.ImageRepository
 
-class ImageRequestBuilderImpl(val mImageRepository: ImageRepository, override var url: String) : ImageRequestBuilder{
+class ImageRequestBuilderImpl(
+    val mImageRepository: ImageRepository,
+    override var url: String
+) : ImageRequestBuilder{
 
     override var headers: HashMap<String, String> = hashMapOf()
     private var placeHolderImageResource: Int? = null
@@ -26,17 +29,22 @@ class ImageRequestBuilderImpl(val mImageRepository: ImageRepository, override va
         return this
     }
 
-    override fun toTarget(target: BaseTarget) {
+    override fun toTarget(target: BaseTarget): Request {
         val request = this.build()
         mImageRepository.getImage(request, target)
+
+        // Preparing response request
+        request.addTarget(target)
+        return request
     }
 
-    override fun toTarget(target: ImageView) {
-        this.toTarget(ImageViewTarget(target))
+    override fun toTarget(target: ImageView): Request {
+        return this.toTarget(ImageViewTarget(target))
     }
 
     private fun build(): ImageRequest {
         val request = ImageRequest(this.url)
+        request.repository = this.mImageRepository
         request.headers = this.headers
         request.placeHolderImageResource = this.placeHolderImageResource
         request.errorImageResource = this.errorImageResource

@@ -14,8 +14,9 @@ class JsonRequestBuilderImpl(
         return this
     }
 
-    override fun toTarget(target: BaseTarget) {
+    override fun toTarget(target: BaseTarget): Request {
         // TODO - Enqueue request here
+        return JsonRequest("dummy-url")
     }
 
 }

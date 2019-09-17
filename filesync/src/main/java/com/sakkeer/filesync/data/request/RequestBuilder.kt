@@ -8,5 +8,5 @@ interface RequestBuilder {
     var headers: HashMap<String, String>
 
     fun addHeader(name: String, value: String): RequestBuilder
-    fun toTarget(target: BaseTarget)
+    fun toTarget(target: BaseTarget): Request
 }

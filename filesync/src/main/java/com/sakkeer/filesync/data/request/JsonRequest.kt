@@ -10,7 +10,9 @@ import okhttp3.Call
 /*
  * Created by Sakkeer Hussain on 2019-09-15.
  */
-class ImageRequest(override var url: String) : Request {
+
+// TODO - Update content to support JSON, Simple copied from Image request
+class JsonRequest(override var url: String) : Request {
 
     override var headers: HashMap<String, String> = hashMapOf()
     override var targets: ArrayList<BaseTarget> = arrayListOf()

@@ -3,6 +3,7 @@ package com.sakkeer.filesync.data.request
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.sakkeer.filesync.client.BaseTarget
+import com.sakkeer.filesync.data.repository.BaseRepository
 import okhttp3.Call
 
 /*
@@ -16,6 +17,7 @@ interface Request {
     var progress: LiveData<Int>?
     var targets: ArrayList<BaseTarget>
     var httpsRequest: Call?
+    var repository: BaseRepository?
 
     fun updateState(state: State)
     fun addTarget(target: BaseTarget)
