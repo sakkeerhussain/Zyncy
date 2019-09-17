@@ -1,15 +1,14 @@
 package com.sakkeerhussain.filecache.data.remote
 
 import android.graphics.BitmapFactory
-import com.sakkeerhussain.filecache.ui.request.ImageRequestFactory
 import com.sakkeerhussain.filecache.data.remote.okhhtp.OkhttpService
+import com.sakkeerhussain.filecache.data.request.Request
 import okhttp3.Call
 import okhttp3.Response
 import java.io.IOException
 
 class ImageServiceDaoImpl(
-    private val mRemoteService: OkhttpService,
-    private val mImageRequestFactory: ImageRequestFactory
+    private val mRemoteService: OkhttpService
 ): ImageServiceDao {
 
     private val mCallback = object:okhttp3.Callback{
@@ -26,8 +25,7 @@ class ImageServiceDaoImpl(
         }
     }
 
-    override fun getImage(url: String) {
-        val request = mImageRequestFactory.getRequest(url)
+    override fun getImage(request: Request) {
         mRemoteService.get(request, mCallback)
     }
 }

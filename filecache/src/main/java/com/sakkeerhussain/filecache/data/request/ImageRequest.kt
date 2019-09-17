@@ -1,7 +1,8 @@
-package com.sakkeerhussain.filecache.ui.request
+package com.sakkeerhussain.filecache.data.request
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.sakkeerhussain.filecache.ui.client.BaseTarget
 import okhttp3.Call
 
 /*
@@ -9,7 +10,7 @@ import okhttp3.Call
  */
 class ImageRequest(override var url: String) : Request {
     override var headers: HashMap<String, String> = hashMapOf()
-    override var listeners: Int = 0
+    override var targets: ArrayList<BaseTarget> = arrayListOf()
     override var state: MutableLiveData<Request.State> = MutableLiveData()
     override var progress: LiveData<Int>? = null
     override var httpsRequest: Call? = null

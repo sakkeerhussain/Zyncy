@@ -1,13 +1,12 @@
-package com.sakkeerhussain.filecache.ui.request
+package com.sakkeerhussain.filecache.data.request
 
 import android.widget.ImageView
 import com.sakkeerhussain.filecache.ui.client.BaseTarget
-import com.sakkeerhussain.filecache.ui.client.ImageViewTarget
 
 interface ImageRequestBuilder : RequestBuilder {
 
-    override val request: Request
-    override var target: BaseTarget?
+    override var url: String
+    override var headers: HashMap<String, String>
 
     override fun addHeader(name: String, value: String): ImageRequestBuilder
 

@@ -1,11 +1,11 @@
-package com.sakkeerhussain.filecache.ui.request
+package com.sakkeerhussain.filecache.data.request
 
 import com.sakkeerhussain.filecache.ui.client.BaseTarget
 
 interface RequestBuilder {
 
-    val request: Request
-    var target: BaseTarget?
+    var url: String
+    var headers: HashMap<String, String>
 
     fun addHeader(name: String, value: String): RequestBuilder
     fun toTarget(target: BaseTarget)

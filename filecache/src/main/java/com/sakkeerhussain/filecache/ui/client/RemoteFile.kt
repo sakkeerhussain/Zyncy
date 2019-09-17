@@ -1,6 +1,6 @@
 package com.sakkeerhussain.filecache.ui.client
 
-import com.sakkeerhussain.filecache.ui.request.RequestBuilder
+import com.sakkeerhussain.filecache.data.request.RequestBuilder
 
 interface RemoteFile {
 

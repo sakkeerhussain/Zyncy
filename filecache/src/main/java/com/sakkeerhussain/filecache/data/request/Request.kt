@@ -1,7 +1,8 @@
-package com.sakkeerhussain.filecache.ui.request
+package com.sakkeerhussain.filecache.data.request
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.sakkeerhussain.filecache.ui.client.BaseTarget
 import okhttp3.Call
 
 /*
@@ -11,9 +12,9 @@ interface Request {
 
     var url: String
     var headers: HashMap<String, String>
-    var listeners: Int
     var state: MutableLiveData<State>
     var progress: LiveData<Int>?
+    var targets: ArrayList<BaseTarget>
     var httpsRequest: Call?
 
     fun updateState(state: State)
