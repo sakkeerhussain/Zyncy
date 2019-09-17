@@ -1,4 +1,4 @@
-package com.sakkeer.filesync
+package com.sakkeer.filesync.requests
 
 import com.sakkeer.filesync.client.ImageTarget
 import com.sakkeer.filesync.data.repository.ImageRepository
@@ -18,13 +18,13 @@ class ImageRequestUnitTest {
     fun requestBuilderTest() {
 
         val mockImageRepository = Mockito.mock(ImageRepository::class.java)
-        val mckTarget = Mockito.mock(ImageTarget::class.java)
+        val mockTarget = Mockito.mock(ImageTarget::class.java)
 
         val request = ImageRequestBuilderImpl(mockImageRepository, TEST_URL)
             .addHeader("Authorization", "token goes here")
             .placeholder(PLACE_HOLDER_IMAGE_RESOURCE_ID)
             .errorImage(ERROR_IMAGE_RESOURCE_ID)
-            .toTarget(mckTarget)
+            .toTarget(mockTarget)
 
         assert(request is ImageRequest)
 
@@ -33,6 +33,6 @@ class ImageRequestUnitTest {
         assertEquals(imageReqest.placeHolderImageResource, PLACE_HOLDER_IMAGE_RESOURCE_ID)
         assertEquals(imageReqest.errorImageResource, ERROR_IMAGE_RESOURCE_ID)
         assertEquals(imageReqest.targets.size, 1)
-        assertEquals(imageReqest.targets[0], mckTarget)
+        assertEquals(imageReqest.targets[0], mockTarget)
     }
 }

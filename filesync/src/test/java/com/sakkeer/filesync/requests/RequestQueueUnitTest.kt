@@ -1,4 +1,4 @@
-package com.sakkeer.filesync
+package com.sakkeer.filesync.requests
 
 import com.sakkeer.filesync.client.ImageTarget
 import com.sakkeer.filesync.data.cache.ImageCacheDao
