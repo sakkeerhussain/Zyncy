@@ -48,6 +48,7 @@ class ImageRepositoryImpl(
         queuedRequest.targets.remove(target)
         if (queuedRequest.targets.isEmpty()) {
             queuedRequest.httpsRequest?.cancel()
+            dequeRequest(queuedRequest)
         }
     }
 
