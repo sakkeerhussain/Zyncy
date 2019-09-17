@@ -1,6 +1,6 @@
 package com.sakkeerhussain.filecache.data.request
 
-open class RequestUtilsImpl(
+class RequestUtilsImpl(
     val mImageRequestQueueImpl: ImageRequestQueueImpl
 ): RequestUtils {
 

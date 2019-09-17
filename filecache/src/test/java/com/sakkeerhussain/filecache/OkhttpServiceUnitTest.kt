@@ -2,6 +2,8 @@ package com.sakkeerhussain.filecache;
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.sakkeerhussain.filecache.data.remote.okhhtp.OkhttpServiceImpl
+import com.sakkeerhussain.filecache.data.request.ImageRequest
+import com.sakkeerhussain.filecache.data.request.Request
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -42,7 +44,7 @@ class OkhttpServiceUnitTest {
                 "0026q=80\\u0026fm=jpg\\u0026crop=faces\\u0026fit=crop\\u0026h=128\\u0026w=128\\u0026" +
                 "s=622a88097cf6661f84cd8942d851d9a2"
 
-        val request = MockImageRequestFactory().getRequest(url)
+        val request = ImageRequest(url)
         OkhttpServiceImpl(client).get(request, callback)
 
         assert(callback.result ?: false)

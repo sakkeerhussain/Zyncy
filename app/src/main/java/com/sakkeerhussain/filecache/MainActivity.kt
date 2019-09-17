@@ -2,7 +2,8 @@ package com.sakkeerhussain.filecache
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.sakkeerhussain.filecache.ui.client.RemoteFileImpl
+import com.sakkeerhussain.filecache.ui.client.FileSync
+import com.sakkeerhussain.filecache.ui.client.FileSyncImpl
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
                 "0026q=80\\u0026fm=jpg\\u0026crop=faces\\u0026fit=crop\\u0026h=128\\u0026w=128\\u0026" +
                 "s=622a88097cf6661f84cd8942d851d9a2"
 
-        RemoteFileImpl
+        FileSync.getClient()
             .loadImage(url)
             .addHeader("Authorization", "token goes here")
             .toTarget(testImageView)

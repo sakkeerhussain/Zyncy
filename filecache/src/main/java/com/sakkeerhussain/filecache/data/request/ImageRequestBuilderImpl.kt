@@ -23,7 +23,7 @@ class ImageRequestBuilderImpl(val mQueue: RequestQueue, override var url: String
         this.toTarget(ImageViewTarget(target))
     }
 
-    fun build(): ImageRequest {
+    private fun build(): ImageRequest {
         val request = ImageRequest(this.url)
         request.headers = this.headers
         return request
