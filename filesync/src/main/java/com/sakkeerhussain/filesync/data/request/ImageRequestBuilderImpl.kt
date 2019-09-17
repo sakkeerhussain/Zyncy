@@ -37,6 +37,8 @@ class ImageRequestBuilderImpl(val mQueue: RequestQueue, override var url: String
     private fun build(): ImageRequest {
         val request = ImageRequest(this.url)
         request.headers = this.headers
+        request.placeHolderImageResource = this.placeHolderImageResource
+        request.errorImageResource = this.errorImageResource
         return request
     }
 
