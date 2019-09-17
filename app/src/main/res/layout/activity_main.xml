@@ -25,7 +25,7 @@
             android:id="@+id/testImageView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="#f00"
+            android:background="@color/grey"
             android:layout_marginBottom="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
