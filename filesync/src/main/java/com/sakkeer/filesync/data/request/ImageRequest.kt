@@ -30,8 +30,8 @@ class ImageRequest(override var url: String) : Request {
         displayPlaceHolder(target as ImageTarget)
     }
 
-    override fun cancelRequest(request: Request) {
-        request.repository?.cancelRequest(request)
+    override fun cancel() {
+        this.repository?.cancelRequest(this)
     }
 
     private fun displayPlaceHolder(target: ImageTarget) {
