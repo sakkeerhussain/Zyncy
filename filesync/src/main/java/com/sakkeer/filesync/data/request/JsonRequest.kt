@@ -37,4 +37,7 @@ class JsonRequest(override var url: String) : Request {
         target.loadImage(img)
     }
 
+    override fun cancel() {
+        this.repository?.cancelRequest(this)
+    }
 }
