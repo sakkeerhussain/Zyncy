@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         FileSync.getClient()
             .loadImage(url)
             // .addHeader("Authorization", "token goes here") // Add only if required
-            .placeholder(R.drawable.ic_launcher_background)
-            .errorImage(R.drawable.ic_launcher_foreground)
+            .placeholder(R.drawable.placeholder)
+            .errorImage(R.drawable.error_image)
             .toTarget(testImageView)
     }
 }
