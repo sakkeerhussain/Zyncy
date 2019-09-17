@@ -21,6 +21,14 @@ class ImageRepositoryImpl(
 
     override fun getImage(request: Request, target: BaseTarget): Request {
 
+        if (target !is ImageTarget) {
+            throw Exception("Target should be Image target for loading image")
+        }
+        if (request !is ImageRequest) {
+            throw Exception("Request should be Image request for loading image")
+        }
+
+        request.addTarget(target)
         val callback = ImageResponseCallbackImpl(request, this)
         val cacheHit = mImageCacheDao.getImage(request, callback)
 
@@ -29,13 +37,6 @@ class ImageRepositoryImpl(
         } else {
 
             // Fetch from remote
-            if (target !is ImageTarget) {
-                throw Exception("Target should be Image target for loading image")
-            }
-            if (request !is ImageRequest) {
-                throw Exception("Request should be Image request for loading image")
-            }
-
             val queuedRequest = mRequestQueue.enqueue(request, target)
             val queuedCallback = ImageResponseCallbackImpl(queuedRequest, this)
             mImageServiceDao.getImage(queuedRequest, queuedCallback)

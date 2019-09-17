@@ -21,7 +21,6 @@ class RequestQueueImpl : RequestQueue {
             existingRequest
         } else {
 
-            request.addTarget(target)
             mActiveRequests.add(request)
             request
         }
