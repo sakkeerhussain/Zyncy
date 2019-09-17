@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".OneImageActivity" />
         <activity android:name=".CancelOptionActivity" />
+        <activity android:name=".TwoImageCancelActivity" />
     </application>
 
 </manifest>

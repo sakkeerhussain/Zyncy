@@ -22,5 +22,9 @@ class HomeActivity : AppCompatActivity() {
         btnCancelOption.setOnClickListener {
             startActivity(Intent(this, CancelOptionActivity::class.java))
         }
+
+        btnTwoCancel.setOnClickListener {
+            startActivity(Intent(this, TwoImageCancelActivity::class.java))
+        }
     }
 }

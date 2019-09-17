@@ -1,10 +1,10 @@
 package com.sakkeer.filesync.data.callback
 
 import android.graphics.Bitmap
-import com.sakkeer.filesync.data.request.ImageRequest
-import com.sakkeer.filesync.data.request.Request
 import com.sakkeer.filesync.client.ImageTarget
 import com.sakkeer.filesync.data.repository.ImageRepository
+import com.sakkeer.filesync.data.request.ImageRequest
+import com.sakkeer.filesync.data.request.Request
 
 class ImageResponseCallbackImpl(
     override val request: Request,
@@ -25,10 +25,14 @@ class ImageResponseCallbackImpl(
 
     override fun onResponse(data: Bitmap, fromCache: Boolean) {
 
-        mImageRepository.dequeRequest(request)
+        if (!fromCache) {
+            mImageRepository.cacheRequest(request, data)
+            mImageRepository.dequeRequest(request)
+        }
 
         request.targets.filterIsInstance<ImageTarget>().forEach {
             it.loadImage(data)
         }
+
     }
 }
