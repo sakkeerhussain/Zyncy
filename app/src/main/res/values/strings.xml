@@ -3,6 +3,7 @@
 
     <string name="title_single_image">Single Image</string>
     <string name="title_single_with_cancel">With Cancel Option</string>
+    <string name="title_two_with_cancel">TWO IMAGES WITH CANCEL</string>
 
     <string name="action_cancel">Cancel</string>
 
