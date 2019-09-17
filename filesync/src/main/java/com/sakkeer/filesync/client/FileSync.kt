@@ -28,11 +28,16 @@ object FileSync {
     val mRequestQueue: RequestQueue = RequestQueueImpl()
     val mImageRepo: ImageRepository = ImageRepositoryImpl(imageServiceDao, imageCacheDao, mRequestQueue)
 
+    // Exposed methods
     fun loadImage(url: String): ImageRequestBuilderImpl {
         return ImageRequestBuilderImpl(mImageRepo, url)
     }
 
     fun loadJson(url: String): RequestBuilder {
         return JsonRequestBuilderImpl(mRequestQueue, url)
+    }
+
+    fun clearImageCache() {
+        mImageRepo.clearCache()
     }
 }

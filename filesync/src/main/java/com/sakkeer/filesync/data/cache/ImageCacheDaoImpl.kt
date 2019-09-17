@@ -25,4 +25,8 @@ class ImageCacheDaoImpl: ImageCacheDao {
     override fun cacheImage(request: Request, bitmap: Bitmap) {
         mMemoryCache.put(request.url, bitmap)
     }
+
+    override fun clearCache() {
+        mMemoryCache.evictAll()
+    }
 }

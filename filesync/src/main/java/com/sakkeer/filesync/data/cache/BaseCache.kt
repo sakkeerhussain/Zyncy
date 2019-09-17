@@ -9,4 +9,5 @@ import com.sakkeer.filesync.data.request.Request
 interface BaseCache {
     fun get(request: Request, callback: ResponseCallback): Boolean
     fun cache(request: Request, data: Any)
+    fun clearCache()
 }

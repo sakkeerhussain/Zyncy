@@ -11,4 +11,5 @@ interface BaseRepository {
     fun dequeRequest(request: Request)
     fun cancelRequest(request: Request)
     fun cacheRequest(request: Request, data: Any)
+    fun clearCache()
 }

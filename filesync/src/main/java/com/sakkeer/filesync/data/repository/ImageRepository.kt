@@ -18,7 +18,4 @@ interface ImageRepository: BaseRepository {
         if (data is Bitmap) this.cacheRequest(request, data)
     }
     fun cacheRequest(request: Request, bitmap: Bitmap)
-
-    override fun dequeRequest(request: Request)
-    override fun cancelRequest(request: Request)
 }
