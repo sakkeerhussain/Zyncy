@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">FileCache</string>
+    <string name="app_name">FileSyncSample</string>
+
+    <string name="title_single_image">Single Image</string>
+    <string name="title_single_with_cancel">With Cancel Option</string>
+
 </resources>

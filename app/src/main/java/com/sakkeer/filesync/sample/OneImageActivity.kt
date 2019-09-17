@@ -3,13 +3,13 @@ package com.sakkeer.filesync.sample
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.sakkeer.filesync.client.FileSync
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_one_image.*
 
-class MainActivity : AppCompatActivity() {
+class OneImageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_one_image)
 
         val url = "http://images.unsplash.com/profile-1464495186405-68089dcd96c3?ixlib=rb-0.3.5\\u" +
                 "0026q=80\\u0026fm=jpg\\u0026crop=faces\\u0026fit=crop\\u0026h=128\\u0026w=128\\u0026" +
