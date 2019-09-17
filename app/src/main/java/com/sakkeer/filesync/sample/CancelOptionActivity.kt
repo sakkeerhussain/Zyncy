@@ -1,6 +1,7 @@
 package com.sakkeer.filesync.sample
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.sakkeer.filesync.client.FileSync
 import com.sakkeer.filesync.data.request.Request
@@ -37,6 +38,7 @@ class CancelOptionActivity : AppCompatActivity() {
 
         btnCancel.setOnClickListener {
             mRequest.cancel()
+            Toast.makeText(this, "Canceled image request", Toast.LENGTH_SHORT).show()
         }
     }
 }
