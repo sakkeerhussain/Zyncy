@@ -3,8 +3,9 @@ package com.sakkeer.filesync.data.request
 import android.widget.ImageView
 import com.sakkeer.filesync.client.BaseTarget
 import com.sakkeer.filesync.client.ImageViewTarget
+import com.sakkeer.filesync.data.repository.ImageRepository
 
-class ImageRequestBuilderImpl(val mQueue: RequestQueue, override var url: String) : ImageRequestBuilder{
+class ImageRequestBuilderImpl(val mImageRepository: ImageRepository, override var url: String) : ImageRequestBuilder{
 
     override var headers: HashMap<String, String> = hashMapOf()
     private var placeHolderImageResource: Int? = null
@@ -27,7 +28,7 @@ class ImageRequestBuilderImpl(val mQueue: RequestQueue, override var url: String
 
     override fun toTarget(target: BaseTarget) {
         val request = this.build()
-        mQueue.enqueue(request, target)
+        mImageRepository.getImage(request, target)
     }
 
     override fun toTarget(target: ImageView) {

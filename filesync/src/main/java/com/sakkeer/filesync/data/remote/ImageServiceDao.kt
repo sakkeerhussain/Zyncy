@@ -1,5 +1,6 @@
 package com.sakkeer.filesync.data.remote
 
+import com.sakkeer.filesync.data.callback.ImageResponseCallback
 import com.sakkeer.filesync.data.request.Request
 
 /*
@@ -7,5 +8,5 @@ import com.sakkeer.filesync.data.request.Request
  */
 interface ImageServiceDao {
 
-    fun getImage(request: Request)
+    fun getImage(request: Request, callback: ImageResponseCallback)
 }

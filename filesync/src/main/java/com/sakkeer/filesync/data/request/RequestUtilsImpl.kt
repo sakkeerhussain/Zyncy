@@ -1,13 +1,13 @@
 package com.sakkeer.filesync.data.request
 
 class RequestUtilsImpl(
-    val mImageRequestQueueImpl: RequestQueueImpl
+    val mRequestQueue: RequestQueue
 ): RequestUtils {
 
-    override fun getExistingImageRequest(request: Request): ImageRequest? {
+    override fun getExistingImageRequest(request: Request): Request? {
 
         val url = request.url
-        val requests = mImageRequestQueueImpl.mActiveRequests.filter {  it.url == url }
+        val requests = mRequestQueue.getActiveRequests().filter {  it.url == url }
         return if (requests.isNotEmpty()) requests[0] else null
     }
 }
