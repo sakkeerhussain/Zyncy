@@ -1,4 +1,4 @@
-package com.sakkeer.filesync.data.remote
+package com.sakkeer.filesync.data.cache
 
 import com.sakkeer.filesync.data.callback.ImageResponseCallback
 import com.sakkeer.filesync.data.request.Request
@@ -6,7 +6,7 @@ import com.sakkeer.filesync.data.request.Request
 /*
  * Created by Sakkeer Hussain on 2019-09-15.
  */
-interface ImageServiceDao: BaseService {
+interface ImageCacheDao: BaseCache {
 
     fun getImage(request: Request, callback: ImageResponseCallback)
 }
