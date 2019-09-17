@@ -4,13 +4,15 @@ import com.sakkeerhussain.filesync.data.repository.ImageRepository
 import com.sakkeerhussain.filesync.ui.client.BaseTarget
 import com.sakkeerhussain.filesync.ui.client.ImageTarget
 
-class ImageRequestQueueImpl(
+class RequestQueueImpl(
     private val mImageRepository: ImageRepository
 ): RequestQueue {
 
     private val mRequestUtils = RequestUtilsImpl(this)
     val mActiveRequests: ArrayList<ImageRequest> = arrayListOf()
 
+
+    // TODO - Make this can handle all type of requests
     override fun enqueue(request: Request, target: BaseTarget): Request {
         if (target !is ImageTarget) {
             throw Exception("Target should be Image target for loading image")

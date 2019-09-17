@@ -1,7 +1,7 @@
 package com.sakkeerhussain.filesync.data.request
 
 class RequestUtilsImpl(
-    val mImageRequestQueueImpl: ImageRequestQueueImpl
+    val mImageRequestQueueImpl: RequestQueueImpl
 ): RequestUtils {
 
     override fun getExistingImageRequest(request: Request): ImageRequest? {

@@ -1,31 +1,35 @@
 package com.sakkeerhussain.filesync.ui.client
 
+import com.sakkeerhussain.filesync.data.remote.ImageServiceDao
 import com.sakkeerhussain.filesync.data.remote.ImageServiceDaoImpl
+import com.sakkeerhussain.filesync.data.remote.okhhtp.OkhttpService
 import com.sakkeerhussain.filesync.data.remote.okhhtp.OkhttpServiceImpl
+import com.sakkeerhussain.filesync.data.repository.ImageRepository
 import com.sakkeerhussain.filesync.data.repository.ImageRepositoryImpl
-import com.sakkeerhussain.filesync.data.request.ImageRequestQueueImpl
-import com.sakkeerhussain.filesync.data.request.RequestBuilder
+import com.sakkeerhussain.filesync.data.request.*
 import okhttp3.OkHttpClient
 
-interface FileSync {
+object FileSync {
 
-    fun loadImage(url: String): RequestBuilder
-    fun loadJson(url: String): RequestBuilder
+//    override val kodein = Kodein.lazy {
+//        bind<OkHttpClient>() with provider { OkHttpClient() }
+//        bind<OkhttpService>() with provider { OkhttpServiceImpl(instance()) }
+//        bind<ImageServiceDao>() with singleton { ImageServiceDaoImpl(instance()) }
+//        bind<ImageRepository>() with singleton { ImageRepositoryImpl(instance()) }
+//        bind<RequestQueue>() with singleton { RequestQueueImpl(instance()) }
+//    }
+//    val mRequestQueue: RequestQueue by instance()
+    val client = OkHttpClient()
+    val remoteService: OkhttpService = OkhttpServiceImpl(client)
+    val imageServiceDao: ImageServiceDao = ImageServiceDaoImpl(remoteService)
+    val imageRepo: ImageRepository = ImageRepositoryImpl(imageServiceDao)
+    val mRequestQueue: RequestQueue = RequestQueueImpl(imageRepo)
 
+    fun loadImage(url: String): ImageRequestBuilderImpl {
+        return ImageRequestBuilderImpl(mRequestQueue, url)
+    }
 
-    // Option to connect from client code
-    // TODO - Could ask client code use with dependecy injection, so that this code can be removed
-    companion object {
-
-        fun getClient(): FileSyncImpl {
-            // TODO - Implement dependency injection in side file sync library,
-            //  hence update this approach
-            val client = OkHttpClient()
-            val remoteService = OkhttpServiceImpl(client)
-            val imageServiceDao = ImageServiceDaoImpl(remoteService)
-            val imageRepo = ImageRepositoryImpl(imageServiceDao)
-            val queue = ImageRequestQueueImpl(imageRepo)
-            return FileSyncImpl(queue)
-        }
+    fun loadJson(url: String): RequestBuilder {
+        return JsonRequestBuilderImpl(mRequestQueue, url)
     }
 }
