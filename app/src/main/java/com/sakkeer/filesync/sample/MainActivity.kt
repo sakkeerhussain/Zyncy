@@ -11,13 +11,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val url = "https://images.unsplash.com/profile-1464495186405-68089dcd96c3?ixlib=rb-0.3.5\\u" +
+        val url = "http://images.unsplash.com/profile-1464495186405-68089dcd96c3?ixlib=rb-0.3.5\\u" +
                 "0026q=80\\u0026fm=jpg\\u0026crop=faces\\u0026fit=crop\\u0026h=128\\u0026w=128\\u0026" +
                 "s=622a88097cf6661f84cd8942d851d9a2"
 
         FileSync.getClient()
             .loadImage(url)
-            .addHeader("Authorization", "token goes here")
+            // .addHeader("Authorization", "token goes here") // Add only if required
+            .placeholder(R.drawable.ic_launcher_background)
+            .errorImage(R.drawable.ic_launcher_foreground)
             .toTarget(testImageView)
     }
 }

@@ -29,10 +29,11 @@ class ImageRequestQueueImpl(
 
         return if (existingRequest != null) {
 
-            existingRequest.targets.add(target)
+            existingRequest.addTarget(target)
             existingRequest
         } else {
 
+            request.addTarget(target)
             mActiveRequests.add(request)
             mImageRepository.getImage(request)
             request

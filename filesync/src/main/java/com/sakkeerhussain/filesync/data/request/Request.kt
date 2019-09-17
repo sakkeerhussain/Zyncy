@@ -18,6 +18,7 @@ interface Request {
     var httpsRequest: Call?
 
     fun updateState(state: State)
+    fun addTarget(target: BaseTarget)
 
     enum class State{
         PLACED, WAITING, IN_PROGRESS, FETCHED, SERVED

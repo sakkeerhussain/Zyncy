@@ -7,14 +7,25 @@ import com.sakkeerhussain.filesync.ui.client.ImageViewTarget
 class ImageRequestBuilderImpl(val mQueue: RequestQueue, override var url: String) : ImageRequestBuilder{
 
     override var headers: HashMap<String, String> = hashMapOf()
+    private var placeHolderImageResource: Int? = null
+    private var errorImageResource: Int? = null
 
     override fun addHeader(name: String, value: String): ImageRequestBuilderImpl {
         this.headers[name] = value
         return this
     }
 
-    override fun toTarget(target: BaseTarget) {
+    override fun placeholder(imgResource: Int): ImageRequestBuilderImpl {
+        this.placeHolderImageResource = imgResource
+        return this
+    }
 
+    override fun errorImage(imgResource: Int): ImageRequestBuilderImpl {
+        this.errorImageResource = imgResource
+        return this
+    }
+
+    override fun toTarget(target: BaseTarget) {
         val request = this.build()
         mQueue.enqueue(request, target)
     }
