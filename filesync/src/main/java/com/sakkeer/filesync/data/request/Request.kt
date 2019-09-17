@@ -13,8 +13,8 @@ interface Request {
 
     var url: String
     var headers: HashMap<String, String>
-    var state: MutableLiveData<State>
-    var progress: LiveData<Int>?
+    var state: State
+    // var progress: LiveData<Int>?
     var targets: ArrayList<BaseTarget>
     var httpsRequest: Call?
     var repository: BaseRepository?

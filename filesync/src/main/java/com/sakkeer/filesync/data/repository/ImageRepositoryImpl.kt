@@ -22,9 +22,7 @@ class ImageRepositoryImpl(
     override fun getImage(request: Request, target: BaseTarget): Request {
 
         val callback = ImageResponseCallbackImpl(request, this)
-        var cacheHit = mImageCacheDao.getImage(request, callback)
-
-//        cacheHit = false
+        val cacheHit = mImageCacheDao.getImage(request, callback)
 
         return if (cacheHit) {
             request
