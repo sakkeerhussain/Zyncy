@@ -1,4 +1,4 @@
-package com.sakkeerhussain.filecache
+package com.sakkeer.filesync.sample
 
 import org.junit.Test
 

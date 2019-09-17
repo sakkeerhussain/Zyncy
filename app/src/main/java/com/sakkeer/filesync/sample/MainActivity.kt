@@ -1,9 +1,8 @@
-package com.sakkeerhussain.filecache
+package com.sakkeer.filesync.sample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.sakkeerhussain.filecache.ui.client.FileSync
-import com.sakkeerhussain.filecache.ui.client.FileSyncImpl
+import com.sakkeer.filesync.sample.ui.client.FileSync
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
