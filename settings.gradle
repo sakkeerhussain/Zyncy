@@ -1,1 +1,1 @@
-include ':app', ':filecache'
+include ':app', ':filesync'
