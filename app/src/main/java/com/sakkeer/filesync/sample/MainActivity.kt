@@ -2,7 +2,7 @@ package com.sakkeer.filesync.sample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.sakkeerhussain.filesync.ui.client.FileSync
+import com.sakkeerhussain.filesync.client.FileSync
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

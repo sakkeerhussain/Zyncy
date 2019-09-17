@@ -1,4 +1,4 @@
-package com.sakkeerhussain.filesync.ui.client
+package com.sakkeerhussain.filesync.client
 
 import com.sakkeerhussain.filesync.data.remote.ImageServiceDao
 import com.sakkeerhussain.filesync.data.remote.ImageServiceDaoImpl

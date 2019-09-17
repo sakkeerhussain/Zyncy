@@ -2,7 +2,7 @@ package com.sakkeerhussain.filesync.data.request
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.sakkeerhussain.filesync.ui.client.BaseTarget
+import com.sakkeerhussain.filesync.client.BaseTarget
 import okhttp3.Call
 
 /*

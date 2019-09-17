@@ -1,8 +1,8 @@
 package com.sakkeerhussain.filesync.data.request
 
 import android.widget.ImageView
-import com.sakkeerhussain.filesync.ui.client.BaseTarget
-import com.sakkeerhussain.filesync.ui.client.ImageViewTarget
+import com.sakkeerhussain.filesync.client.BaseTarget
+import com.sakkeerhussain.filesync.client.ImageViewTarget
 
 class ImageRequestBuilderImpl(val mQueue: RequestQueue, override var url: String) : ImageRequestBuilder{
 

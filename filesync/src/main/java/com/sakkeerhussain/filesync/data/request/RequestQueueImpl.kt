@@ -1,8 +1,8 @@
 package com.sakkeerhussain.filesync.data.request
 
 import com.sakkeerhussain.filesync.data.repository.ImageRepository
-import com.sakkeerhussain.filesync.ui.client.BaseTarget
-import com.sakkeerhussain.filesync.ui.client.ImageTarget
+import com.sakkeerhussain.filesync.client.BaseTarget
+import com.sakkeerhussain.filesync.client.ImageTarget
 
 class RequestQueueImpl(
     private val mImageRepository: ImageRepository

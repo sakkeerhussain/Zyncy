@@ -3,8 +3,7 @@ package com.sakkeerhussain.filesync.data.remote.okhhtp
 import android.graphics.BitmapFactory
 import com.sakkeerhussain.filesync.data.request.ImageRequest
 import com.sakkeerhussain.filesync.data.request.Request
-import com.sakkeerhussain.filesync.ui.client.ImageTarget
-import com.sakkeerhussain.filesync.ui.client.ImageViewTarget
+import com.sakkeerhussain.filesync.client.ImageTarget
 import okhttp3.Call
 import okhttp3.Response
 import java.io.IOException

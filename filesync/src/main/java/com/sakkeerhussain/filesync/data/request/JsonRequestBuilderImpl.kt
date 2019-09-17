@@ -1,6 +1,6 @@
 package com.sakkeerhussain.filesync.data.request
 
-import com.sakkeerhussain.filesync.ui.client.BaseTarget
+import com.sakkeerhussain.filesync.client.BaseTarget
 
 class JsonRequestBuilderImpl(
     val queue: RequestQueue,

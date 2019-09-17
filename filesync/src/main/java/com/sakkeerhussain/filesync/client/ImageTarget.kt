@@ -1,4 +1,4 @@
-package com.sakkeerhussain.filesync.ui.client
+package com.sakkeerhussain.filesync.client
 
 import android.graphics.Bitmap
 

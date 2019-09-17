@@ -1,7 +1,7 @@
 package com.sakkeerhussain.filesync.data.request
 
 import android.widget.ImageView
-import com.sakkeerhussain.filesync.ui.client.BaseTarget
+import com.sakkeerhussain.filesync.client.BaseTarget
 
 interface ImageRequestBuilder : RequestBuilder {
 
