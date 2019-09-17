@@ -64,6 +64,10 @@ class ImageRepositoryImpl(
         mImageCacheDao.cacheImage(request, bitmap)
     }
 
+    override fun clearCache() {
+        mImageCacheDao.clearCache()
+    }
+
     private fun isInCache(): Boolean {
         return false
     }
