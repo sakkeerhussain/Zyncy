@@ -34,7 +34,7 @@ class ImageRequestBuilderImpl(
         mImageRepository.getImage(request, target)
 
         // Preparing response request
-        request.addTarget(target)
+        request.targets = arrayListOf(target)
         return request
     }
 

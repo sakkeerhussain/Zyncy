@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.sakkeer.filesync.client.FileSync
 import com.sakkeer.filesync.data.request.Request
-import kotlinx.android.synthetic.main.activity_one_image.*
+import kotlinx.android.synthetic.main.activity_cancel_option.*
+import kotlinx.android.synthetic.main.activity_one_image.testImageView
 
 class CancelOptionActivity : AppCompatActivity() {
 
@@ -26,7 +27,6 @@ class CancelOptionActivity : AppCompatActivity() {
 
         mRequest = FileSync
             .loadImage(url)
-            // .addHeader("Authorization", "token goes here") // Add only if required
             .placeholder(R.drawable.placeholder)
             .errorImage(R.drawable.error_image)
             .toTarget(testImageView)
@@ -34,6 +34,9 @@ class CancelOptionActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        mRequest.cancel()
+
+        btnCancel.setOnClickListener {
+            mRequest.cancel()
+        }
     }
 }
