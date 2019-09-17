@@ -22,11 +22,11 @@ object FileSync {
     val client = OkHttpClient()
     val remoteService: OkhttpService = OkhttpServiceImpl(client)
     val imageServiceDao: ImageServiceDao = ImageServiceDaoImpl(remoteService)
-    val imageRepo: ImageRepository = ImageRepositoryImpl(imageServiceDao)
-    val mRequestQueue: RequestQueue = RequestQueueImpl(imageRepo)
+    val mRequestQueue: RequestQueue = RequestQueueImpl()
+    val mImageRepo: ImageRepository = ImageRepositoryImpl(imageServiceDao, mRequestQueue)
 
     fun loadImage(url: String): ImageRequestBuilderImpl {
-        return ImageRequestBuilderImpl(mRequestQueue, url)
+        return ImageRequestBuilderImpl(mImageRepo, url)
     }
 
     fun loadJson(url: String): RequestBuilder {
