@@ -9,7 +9,7 @@ import java.io.IOException
 class HttpResponseCallbackImpl(
     override val request: Request,
     override val callback: ResponseCallback
-) : CacheResponseCallback, okhttp3.Callback{
+) : HttpResponseCallback, okhttp3.Callback{
 
     override fun onFailure(call: Call, e: IOException) {
         this.callback.onFailure(e)
@@ -23,6 +23,6 @@ class HttpResponseCallbackImpl(
             return
         }
 
-        this.callback.onResponse(body.byteStream())
+        this.callback.onResponse(body.byteStream(), false)
     }
 }

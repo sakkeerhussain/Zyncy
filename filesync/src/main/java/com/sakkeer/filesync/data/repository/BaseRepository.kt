@@ -10,4 +10,5 @@ interface BaseRepository {
     fun get(request: Request, target: BaseTarget): Request
     fun dequeRequest(request: Request)
     fun cancelRequest(request: Request)
+    fun cacheRequest(request: Request, data: Any)
 }

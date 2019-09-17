@@ -23,7 +23,7 @@ class ImageResponseCallbackImpl(
         }
     }
 
-    override fun onResponse(data: Bitmap) {
+    override fun onResponse(data: Bitmap, fromCache: Boolean) {
 
         mImageRepository.dequeRequest(request)
 

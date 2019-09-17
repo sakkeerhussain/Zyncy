@@ -8,7 +8,7 @@ interface ResponseCallback {
     val request: Request
 
     fun onFailure(e: Exception)
-    fun onResponse(inputStream: InputStream)
+    fun onResponse(inputStream: InputStream, fromCache: Boolean)
 
     fun removeRequestFromQueue() {
 

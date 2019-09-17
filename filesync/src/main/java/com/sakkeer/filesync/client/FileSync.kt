@@ -1,5 +1,7 @@
 package com.sakkeer.filesync.client
 
+import com.sakkeer.filesync.data.cache.ImageCacheDao
+import com.sakkeer.filesync.data.cache.ImageCacheDaoImpl
 import com.sakkeer.filesync.data.remote.ImageServiceDao
 import com.sakkeer.filesync.data.remote.ImageServiceDaoImpl
 import com.sakkeer.filesync.data.remote.okhhtp.OkhttpService
@@ -22,8 +24,9 @@ object FileSync {
     val client = OkHttpClient()
     val remoteService: OkhttpService = OkhttpServiceImpl(client)
     val imageServiceDao: ImageServiceDao = ImageServiceDaoImpl(remoteService)
+    val imageCacheDao: ImageCacheDao = ImageCacheDaoImpl()
     val mRequestQueue: RequestQueue = RequestQueueImpl()
-    val mImageRepo: ImageRepository = ImageRepositoryImpl(imageServiceDao, mRequestQueue)
+    val mImageRepo: ImageRepository = ImageRepositoryImpl(imageServiceDao, imageCacheDao, mRequestQueue)
 
     fun loadImage(url: String): ImageRequestBuilderImpl {
         return ImageRequestBuilderImpl(mImageRepo, url)
