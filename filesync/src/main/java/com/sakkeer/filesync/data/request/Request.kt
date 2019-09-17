@@ -21,6 +21,7 @@ interface Request {
 
     fun updateState(state: State)
     fun addTarget(target: BaseTarget)
+    fun cancelRequest(request: Request)
 
     enum class State{
         PLACED, WAITING, IN_PROGRESS, FETCHED, SERVED

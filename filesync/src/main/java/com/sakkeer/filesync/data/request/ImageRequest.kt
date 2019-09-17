@@ -30,6 +30,10 @@ class ImageRequest(override var url: String) : Request {
         displayPlaceHolder(target as ImageTarget)
     }
 
+    override fun cancelRequest(request: Request) {
+        request.repository?.cancelRequest(request)
+    }
+
     private fun displayPlaceHolder(target: ImageTarget) {
         val img = placeHolderImageResource ?: return
         target.loadImage(img)

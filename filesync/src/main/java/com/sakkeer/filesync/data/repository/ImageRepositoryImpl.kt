@@ -41,7 +41,14 @@ class ImageRepositoryImpl(
     }
 
     override fun cancelRequest(request: Request) {
-        // TODO =
+        if (request.targets.isEmpty()) return
+        val target = request.targets[0]
+        val queuedRequest = mRequestQueue.getExistingImageRequest(request) ?: return
+
+        queuedRequest.targets.remove(target)
+        if (queuedRequest.targets.isEmpty()) {
+            queuedRequest.httpsRequest?.cancel()
+        }
     }
 
     private fun isInCache(): Boolean {
