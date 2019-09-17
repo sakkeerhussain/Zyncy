@@ -12,7 +12,7 @@ class CancelOptionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_one_image)
+        setContentView(R.layout.activity_cancel_option)
 
         setupViews()
         setupListeners()
