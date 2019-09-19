@@ -59,8 +59,8 @@ FileSync.loadImage(url)
 
 ## TODO items
 
-1. Implement caching.
-2. Prevent second request to a cached url should read from cache.
-2. Prevent second request to one url which is in progress should share the previous request.
+~~1. Implement caching.~~
+~~2. Prevent second request to a cached url should read from cache.~~
+~~3. Prevent second request to one url which is in progress should share the previous request.~~
 4. Create a custom image view for loading image directly.
 5. Complete Unit test cases.
