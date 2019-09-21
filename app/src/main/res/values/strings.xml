@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">FileSyncSample</string>
 
-    <string name="title_single_image">Single Image</string>
-    <string name="title_single_with_cancel">With Cancel Option</string>
+    <string name="title_single_image">SINGLE IMAGE</string>
+    <string name="title_single_with_cancel">ONE IMAGE WITH CANCEL</string>
     <string name="title_two_with_cancel">TWO IMAGES WITH CANCEL</string>
+    <string name="title_custom_view">CUSTOME VIEW</string>
 
     <string name="action_cancel">Cancel</string>
     <string name="action_clear_cache">CLEAR CACHE</string>
