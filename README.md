@@ -44,18 +44,21 @@ FileSync.loadImage(url)
         .toTarget(testImageView)
 ```
 
-**In complete section starts**
+
 ### Add the custom image view in your layouts
 
-1. Load image to custome view
+1. Load image to custom view
 
 ```
 <com.filesync.views.FileSyncImageView
-            android:layout_width="match_parebt"
-            android:layout_height="match_parebt"
-            app:src="https//www.test.com/image.png" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/place_holder"
+            
+            app:url="https//www.test.com/image.png"
+            app:error_image="@drawable/error_image"/>
 ```
-**In complete section ends**
+
 
 ## TODO items
 
