@@ -48,3 +48,41 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'ImageSync'
+
+    publishedGroupId = 'ua.org.tenletters.widget'
+    libraryName = 'DiagonalScrollView'
+    artifact = 'diagonalscrollview'
+
+    libraryDescription = 'This library can use to display images from server/CDN to Android with one line code/by using Custom image view.'
+
+    siteUrl = 'https://github.com/LissF/DiagonalScrollView'
+    gitUrl = 'https://github.com/LissF/DiagonalScrollView.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'sakkeerhussainp'
+    developerName = 'Sakkeer Hussain'
+    developerEmail = 'sakkeerhussainp@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
