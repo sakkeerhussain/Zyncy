@@ -6,7 +6,7 @@ import com.sakkeer.filesync.client.ImageViewTarget
 import com.sakkeer.filesync.data.repository.ImageRepository
 
 class ImageRequestBuilderImpl(
-    val mImageRepository: ImageRepository,
+    private val mImageRepository: ImageRepository,
     override var url: String
 ) : ImageRequestBuilder{
 

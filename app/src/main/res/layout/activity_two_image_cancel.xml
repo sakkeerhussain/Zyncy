@@ -13,7 +13,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:text="TWO PHOTO CANCEL"
+            android:text="@string/title_two_with_cancel"
             android:textColor="#000"
             android:textSize="24sp"
             android:textStyle="bold" />

@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OneImageActivity">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OneImageActivity">
 
     <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_single_image"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/title_custom_view"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp"
-            android:textSize="24sp"
-            android:textColor="#000"
-            android:textStyle="bold"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:id="@+id/textView"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-            android:id="@+id/testImageView"
+    <com.sakkeer.filesync.ui.view.RemoteImageViewImpl
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -31,9 +30,13 @@
             android:layout_marginBottom="16dp"
             android:background="@color/grey"
             android:scaleType="fitXY"
+            android:src="@drawable/placeholder"
+            app:error_image="@drawable/error_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:url="https://images.unsplash.com/photo-1493509094819-bd2d26fac21b" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

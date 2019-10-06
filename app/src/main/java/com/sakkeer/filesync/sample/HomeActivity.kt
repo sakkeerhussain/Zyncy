@@ -29,6 +29,10 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, TwoImageCancelActivity::class.java))
         }
 
+        btnCustomView.setOnClickListener {
+            startActivity(Intent(this, CustomViewActivity::class.java))
+        }
+
         btnClearCache.setOnClickListener {
             FileSync.clearImageCache()
             Toast.makeText(this, "Image cache cleared successfully", Toast.LENGTH_SHORT).show()
