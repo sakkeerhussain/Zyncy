@@ -50,7 +50,7 @@ Zyncy.loadImage(url)
 1. Load image to custom view
 
 ```
-<com.filesync.views.FileSyncImageView
+<com.sakkeer.zyncy.ui.view.RemoteImageViewImpl
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/place_holder"
