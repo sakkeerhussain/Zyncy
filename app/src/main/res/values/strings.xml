@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FileSyncSample</string>
+    <string name="app_name">Zyncy-Sample</string>
 
     <string name="title_single_image">SINGLE IMAGE</string>
     <string name="title_single_with_cancel">ONE IMAGE WITH CANCEL</string>

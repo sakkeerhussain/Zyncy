@@ -21,7 +21,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <com.sakkeer.filesync.ui.view.RemoteImageViewImpl
+    <com.sakkeer.zyncy.ui.view.RemoteImageViewImpl
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"

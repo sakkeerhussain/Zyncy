@@ -1,1 +1,1 @@
-include ':app', ':filesync'
+include ':app', ':zyncy'
