@@ -4,6 +4,26 @@ This is a library will help to load remote files(Images for the time being) sync
 
 ## How to use
 
+### Integrate the library
+
+1. Add the bintray repository in your root gradle file
+```
+    repositories {
+        ...
+        ...
+
+        maven {
+            url  "https://dl.bintray.com/sakkeerhussain/Zyncy"
+        }
+    }
+    
+```
+
+2. Add this line in the app level gradle file
+```
+    implementation 'com.sakkeer.zyncy:zyncy:0.1'
+```
+
 ### Load image to your image views
 
 1. Load image to your image views

@@ -23,8 +23,7 @@ class CancelOptionActivity : AppCompatActivity() {
 
         val url = "https://images.unsplash.com/profile-1464495186405-68089dcd96c3"
 
-        mRequest = Zyncy
-            .loadImage(url)
+        mRequest = Zyncy.loadImage(url)
             .placeholder(R.drawable.placeholder)
             .errorImage(R.drawable.error_image)
             .toTarget(testImageView)

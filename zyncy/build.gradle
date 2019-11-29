@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 28
@@ -30,7 +32,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.core:core-ktx:1.1.0"
-    implementation "com.squareup.okhttp3:okhttp:4.2.0"
+    implementation "com.squareup.okhttp3:okhttp:4.2.1"
 
     // Kodein
     // implementation 'org.kodein.di:kodein-di-generic-jvm:5.2.0'
@@ -38,7 +40,7 @@ dependencies {
 
 
     testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.23.0'
+    testImplementation 'org.mockito:mockito-core:3.0.0'
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
 
     androidTestImplementation 'androidx.test:runner:1.2.0'
@@ -47,4 +49,121 @@ dependencies {
 
 repositories {
     mavenCentral()
+}
+
+buildscript {
+    repositories {
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
+
+ext {
+    bintrayRepo = 'Zyncy'
+    bintrayName = 'Zyncy'
+
+    publishedGroupId = 'com.sakkeer.zyncy'
+    libraryName = 'Zyncy'
+    artifact = 'zyncy'
+
+    libraryDescription = '\t\n' +
+            'This is a library is used for remote file(Images for the time being) sync to Android application and cache it in memory to prevent fetching the same again from remote for further requests.'
+
+    siteUrl = 'https://github.com/sakkeerhussain/Zyncy'
+    gitUrl = 'https://github.com/sakkeerhussain/Zyncy.git'
+
+    libraryVersion = '0.1'
+
+    developerId = 'sakkeerhussain'
+    developerName = 'Sakkeer Hussain'
+    developerEmail = 'sakkeerhussainp@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+group = publishedGroupId
+version = libraryVersion
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging 'aar'
+            groupId publishedGroupId
+            artifactId artifact
+
+            name libraryName
+            description libraryDescription
+            url siteUrl
+
+            licenses {
+                license {
+                    name licenseName
+                    url licenseUrl
+                }
+            }
+            developers {
+                developer {
+                    id developerId
+                    name developerName
+                    email developerEmail
+                }
+            }
+            scm {
+                connection gitUrl
+                developerConnection gitUrl
+                url siteUrl
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath = project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = bintrayRepo
+        name = bintrayName
+        desc = libraryDescription
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = allLicenses
+        dryRun = false
+        publish = true
+        override = false
+        publicDownloadNumbers = true
+        version {
+            desc = libraryDescription
+        }
+    }
 }
