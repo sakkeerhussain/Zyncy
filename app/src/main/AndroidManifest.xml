@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        package="com.sakkeer.zyncy.sample">
+        package="com.zyncy.sample">
 
     <application
             android:allowBackup="true"
@@ -12,17 +12,17 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="com.sakkeer.zyncy.sample.HomeActivity">
+        <activity android:name="com.zyncy.sample.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.sakkeer.zyncy.sample.OneImageActivity" />
-        <activity android:name="com.sakkeer.zyncy.sample.CancelOptionActivity" />
-        <activity android:name="com.sakkeer.zyncy.sample.TwoImageCancelActivity" />
-        <activity android:name="com.sakkeer.zyncy.sample.CustomViewActivity" />
+        <activity android:name="com.zyncy.sample.OneImageActivity" />
+        <activity android:name="com.zyncy.sample.CancelOptionActivity" />
+        <activity android:name="com.zyncy.sample.TwoImageCancelActivity" />
+        <activity android:name="com.zyncy.sample.CustomViewActivity" />
     </application>
 
 </manifest>

@@ -8,8 +8,7 @@ This is a library will help to load remote files(Images for the time being) sync
 
 1. Add this line in the app level gradle file
 ```
-    implementation 'com.sakkeer.zyncy:zyncy:0.1'
-    implementation 'com.squareup.okhttp3:okhttp:4.2.1'
+    implementation 'com.zyncy:zyncy:0.2.8'
 ```
 
 ### Load image to your image views
@@ -58,7 +57,7 @@ Zyncy.loadImage(url)
 1. Load image to custom view
 
 ```
-<com.sakkeer.zyncy.ui.view.RemoteImageViewImpl
+<com.zyncy.ui.view.RemoteImageViewImpl
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/place_holder"
