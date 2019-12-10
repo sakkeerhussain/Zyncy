@@ -7,10 +7,9 @@ This is a library will help to load remote files(Images for the time being) sync
 ### Integrate the library
 
 1. Add this line in the app level gradle file
-    
-    ~~implementation 'com.zyncy:zyncy:0.2.8'~~
-```
-    implementation 'com.sakkeer.zyncy:zyncy:0.2.8'
+
+```    
+    implementation 'com.zyncy:zyncy:0.3.3'
 ```
 
 ### Load image to your image views
